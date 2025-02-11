@@ -1,19 +1,91 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body{
+body {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1c20 0%, #454545 100%);
+    padding: 2rem;
+    color: white;
 }
 
-.meme img{
-    margin-top: 5rem;
-    width: 30rem;
-    height: 30rem;
+.meme {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.meme:hover {
+    transform: translateY(-5px);
+}
+
+.meme img {
+    width: min(80vw, 500px);
+    height: min(80vw, 500px);
+    object-fit: contain;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.generate-btn {
+    margin-top: 2rem;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    color: #1a1c20;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 255, 135, 0.2);
+}
+
+.generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 255, 135, 0.4);
+}
+
+.generate-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 255, 135, 0.2);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .meme img {
+        width: 90vw;
+        height: 90vw;
+    }
+    
+    .generate-btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
 }
