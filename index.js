@@ -25,7 +25,6 @@ img.addEventListener("mouseleave", function(){
 
 generateBtn.addEventListener("click", function() {
     randomMemeGenerator();
-    // Reset the timer to avoid immediate auto-refresh after button click
     clearInterval(timer);
     timer = setInterval(randomMemeGenerator, 7000);
 });

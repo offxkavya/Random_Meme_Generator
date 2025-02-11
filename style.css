@@ -5,28 +5,48 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 body {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(135deg, #1a1c20 0%, #454545 100%);
+    background: linear-gradient(-45deg, #ee7752, #2a9d8f, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
     padding: 2rem;
     color: white;
 }
 
 .meme {
     background: rgba(255, 255, 255, 0.1);
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 20px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+    animation: fadeIn 0.6s ease-out forwards;
 }
 
 .meme:hover {
-    transform: translateY(-5px);
+    transform: scale(1.02);
 }
 
 .meme img {
@@ -34,20 +54,18 @@ body {
     height: min(80vw, 500px);
     object-fit: contain;
     border-radius: 15px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
 h1 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    background: linear-gradient(45deg, #00ff87, #60efff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     letter-spacing: 2px;
     text-align: center;
+    animation: float 3s ease-in-out infinite;
 }
 
 .generate-btn {
@@ -55,23 +73,23 @@ h1 {
     padding: 15px 30px;
     font-size: 1.1rem;
     font-weight: bold;
-    background: linear-gradient(45deg, #00ff87, #60efff);
-    color: #1a1c20;
+    background: white;
+    color: #2a9d8f;
     border: none;
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 255, 135, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.6s ease-out forwards;
 }
 
 .generate-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 255, 135, 0.4);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .generate-btn:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 10px rgba(0, 255, 135, 0.2);
+    transform: scale(0.95);
 }
 
 @media (max-width: 768px) {
